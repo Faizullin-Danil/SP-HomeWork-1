@@ -1,15 +1,19 @@
-import React from "react";
 import "./Card.css"
-import Img from "../Img/Img.jsx"
-import Textinfo from "../Textinfo/Textinfo.jsx"
 
-const Card = ({text, src, alt}) => {
+const Card = ({id, Title, Description, FillingLevel, competencies, setCompetencies}) => {
 
-    return(
+    const Delete = () => {
+        const updateCompetencies = competencies.filter(competence => competence.id !== id)
+        setCompetencies(updateCompetencies)
+    }
+
+    return (
         <div className="card">
-            {src && <Img src={src} alt="Dog"/>}
-            <Textinfo text={text}/>
+            <h1>{Title}</h1>
+            <h2>{Description}</h2>
+            <p>{FillingLevel}%</p>
+            <button className="button" onClick={Delete}>X</button>
         </div>
     )
 }
-export default Card;
+export default Card

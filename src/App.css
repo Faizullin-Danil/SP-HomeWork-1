@@ -40,25 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-
-.imageDog{
-  width: 300px;
-  height: 300px;
-}
-
-.card-container {
-  display: flex;
-  justify-content: space-between; /* Пространство между колонками */
-  gap: 20px; /* Отступы между колонками */
-  flex-wrap: wrap; /* Колонки переносятся на новые строки, если экран маленький */
-  margin-top: 20px;
-}
-
-.column {
-  flex: 1;
-  min-width: 200px; /* Минимальная ширина колонки */
-}
-
-
-
-

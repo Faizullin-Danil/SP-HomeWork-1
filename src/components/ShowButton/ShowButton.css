@@ -1,0 +1,6 @@
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование по горизонтали */
+    gap: 20px; /* Отступы между элементами */
+}

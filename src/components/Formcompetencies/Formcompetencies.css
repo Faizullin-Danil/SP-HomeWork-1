@@ -1,0 +1,11 @@
+.input-competencies {
+    display: flex;
+    gap: 10px; /* Расстояние между элементами */
+    align-items: center; /* Выравнивание по вертикали */
+}
+
+.form-competencies {
+    display: flex;
+    gap: 10px; /* Расстояние между элементами */
+    align-items: center; /* Выравнивание по вертикали */
+}

@@ -1,47 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Card from "./components/Card/Card.jsx"
-import DogImage from "./image/Dog.jpg";
-
-const cardscompetencies = [
-  { text: "Способен на длительную умственную работу"},
-  { text: "Дисциплинирован"},
-  { text: "Занимаюсь спортом"},
-  { text: "Коммуникабельный"},
-]
-
-const cardswantcompetencies = [
-  { text: "Реакт"},
-  { text: "css"},
-  { text: "html"},
-  { text: "js"},
-]
+import ShowButton from './components/Button/ShowButton'
+import Form from './components/Form/Form'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const [competencies, setCompetencies] = useState([
+    { id: 1, Title: "Организованность", Description: "Достаточно организован", FillingLevel: 80},
+    { id: 2, Title: "Роботоспособность", Description: "Всегда готов к работе", FillingLevel: 40},
+    { id: 3, Title: "Адаптивность", Description: "Не пугают перемены и смена обстановки", FillingLevel: 35},
+    { id: 4, Title: "Умение находить общий язык с людьми", Description: "В любом обществе буду как свой", FillingLevel: 90},
+    { id: 5, Title: "Легко обучаем", Description: "Если что-то действительно заинтересовало, то легко дается к изучению", FillingLevel: 95}
+  ])
+
   return (
-    <>
-      <Card src={DogImage} text={"Файзуллин Данил Рамилевич"} alt={"Dog"}/>
+    <div>
+      <Form competencies={competencies} setCompetencies={setCompetencies}/>
+      <ShowButton competencies={competencies} setCompetencies={setCompetencies}/>
       
-      <div className='card-container'>
-        <div className='column'>
-          <h1>Мои компетенции</h1>
-          {cardscompetencies.map((card, index) => 
-            <Card key={index} text={card.text}/>
-          )}
-        </div>
-        
-        <div className='column'>
-          <h1>Желаемые компетенции</h1>
-          {cardswantcompetencies.map((card, index) => 
-            <Card key={index} text={card.text}/>
-          )}
-        </div>
-      </div>
-    </>
+    </div>
   )
 }
 
